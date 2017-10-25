@@ -16,7 +16,7 @@ Pull in the package using Composer
 
     composer require madmikeyb/throttleable
 
-> **Note**: If you are using Laravel 5.5, the next step for provider are unnecessary. Laravel Throttleable supports Laravel [Package Discovery](https://laravel.com/docs/5.5/packages#package-discovery).
+> **Note**: If you are using Laravel 5.5, the next steps are unnecessary. Laravel Throttleable supports Laravel [Package Discovery](https://laravel.com/docs/5.5/packages#package-discovery).
 
 Include the service provider within `app/config/app.php`.
 
