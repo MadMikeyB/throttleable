@@ -27,12 +27,18 @@ Include the service provider within `app/config/app.php`.
 ],
 ```
 
-You can publish [the migration](https://github.com/madmikeyb/throttleable/blob/master/database/migrations/create_throttles_table.php.stub) with:
+## Migrations
+
+You must publish [the migration](https://github.com/madmikeyb/throttleable/blob/master/database/migrations/create_throttles_table.php.stub) with:
 
 ```bash
 php artisan vendor:publish --provider="MadMikeyB\Throttleable\Providers\ThrottleableServiceProvider" --tag="migrations"
 php artisan migrate
 ```
+
+## Configuration
+
+Throttleable supports optional configuration.
 
 You can publish the config file with:
 
