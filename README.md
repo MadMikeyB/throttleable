@@ -29,7 +29,7 @@ Include the service provider within `app/config/app.php`.
 
 ## Migrations
 
-You must publish [the migration](https://github.com/madmikeyb/throttleable/blob/master/database/migrations/create_throttles_table.php.stub) with:
+You must publish [the migration](https://github.com/madmikeyb/throttleable/blob/master/database/migrations/create_throttles_table.php.stub) by running the following command:
 
 ```bash
 php artisan vendor:publish --provider="MadMikeyB\Throttleable\Providers\ThrottleableServiceProvider" --tag="migrations"
