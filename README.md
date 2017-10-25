@@ -112,7 +112,11 @@ class CommentsController
 
 ## Overriding Configuration on a case-by-case basis
 
-If you need to allow one method more attempts than is defined in the configuration file, you may override the defaults by passing them as the second and third arguments to `Throttle`.
+In some cases you may want to override the default attempt and time limits which are set in the configuration file. For example, a user creating a comment may not be throttled as quickly as someone trying to log into an admin control panel.
+
+The second and third arguments to the constructor of the `Throttle` model are the `attempt_limit` and the `expiry_weeks` configuration variables respectively.
+
+If you need to override the defaults set in `config/throttleable.php`, you would do so as follows:
 
 ```php
 public function store(Request $request) 
