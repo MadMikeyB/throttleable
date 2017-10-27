@@ -17,8 +17,11 @@ class Throttle extends Model
     /** @var int Number of attempts allowed before the user is throttled */
     public $attemptLimit;
 
-    /** @var int Number of weeks before throttle expires */
-    public $expiryWeeks;
+    /** @var int The Time Metric to use for expiry time limit */
+    public $expiryMetric;
+
+    /** @var int Number of Hours, Days or Weeks before throttle expires */
+    public $expiryTimeLimit;
 
     /** @var bool */
     public $timestamps = false;
@@ -36,7 +39,8 @@ class Throttle extends Model
     {
         $this->request = $request;
         $this->attemptLimit = $attemptLimit ?? config('throttleable.attempt_limit');
-        $this->expiryWeeks = $expiryWeeks ?? config('throttleable.expiry_weeks');
+        $this->expiryMetric = $expiryMetric ?? config('throttleable.expiry_metric');
+        $this->expiryTimeLimit = $expiryTimeLimit ?? config('throttleable.expiry_timelimit');
     }
 
 }

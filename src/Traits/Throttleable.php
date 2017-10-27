@@ -57,7 +57,21 @@ trait Throttleable
     {
         $this->ip = $this->request->ip();
         $this->attempts = 0;
-        $this->expires_at = Carbon::now()->addWeeks($this->expiryWeeks);
+        switch ($this->expiryMetric)
+        {
+            case 'hour':
+                $this->expires_at = Carbon::now()->addHours($this->expiryTimeLimit);
+                break;
+
+            case 'day':
+                $this->expires_at = Carbon::now()->addDays($this->expiryTimeLimit);
+                break;
+
+            default:
+            case 'week':
+                $this->expires_at = Carbon::now()->addWeeks($this->expiryTimeLimit);
+                break;
+        }
         $this->created_at = Carbon::now();
         $throttle = $this->save();
 
