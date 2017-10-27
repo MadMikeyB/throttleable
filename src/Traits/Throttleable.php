@@ -34,7 +34,7 @@ trait Throttleable
     /**
      * Get or Create the Throttle Record
      *
-     * @return \JamJar\Throttle
+     * @return \MadMikeyB\Throttleable\Models\Throttle
      */
     public function get()
     {
@@ -51,7 +51,7 @@ trait Throttleable
     /**
      * Create a new Throttle Row
      *
-     * @return \JamJar\Throttle
+     * @return \MadMikeyB\Throttleable\Models\Throttle
      */
     protected function createThrottle()
     {
@@ -67,8 +67,8 @@ trait Throttleable
     /**
      * Hit the Throttle Row and increment the attempt counter
      *
-     * @param  \JamJar\Throttle $throttle
-     * @return \JamJar\Throttle
+     * @param  \MadMikeyB\Throttleable\Models\Throttle $throttle
+     * @return \MadMikeyB\Throttleable\Models\Throttle
      */
     public function hitThrottle(Throttle $throttle)
     {
@@ -80,7 +80,7 @@ trait Throttleable
     /**
      * Clear Expired Throttles from the Database
      *
-     * @param  \JamJar\Throttle $throttle
+     * @param  \MadMikeyB\Throttleable\Models\Throttle $throttle
      * @return bool
      */
     public function clearExpired(Throttle $throttle)
