@@ -5,7 +5,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use MadMikeyB\Throttleable\Models\Throttle;
 
-trait Throttleable 
+trait Throttleable
 {
     /**
      * Check if the IP address exists in the throttles table
@@ -57,8 +57,7 @@ trait Throttleable
     {
         $this->ip = $this->request->ip();
         $this->attempts = 0;
-        switch ($this->expiryMetric)
-        {
+        switch ($this->expiryMetric) {
             case 'hour':
                 $this->expires_at = Carbon::now()->addHours($this->expiryTimeLimit);
                 break;

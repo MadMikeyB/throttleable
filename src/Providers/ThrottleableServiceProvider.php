@@ -34,7 +34,8 @@ class ThrottleableServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../../config/throttleable.php', 'throttleable'
+            __DIR__ . '/../../config/throttleable.php',
+            'throttleable'
         );
     }
 }

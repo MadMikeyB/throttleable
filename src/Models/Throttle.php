@@ -42,5 +42,4 @@ class Throttle extends Model
         $this->expiryMetric = $expiryMetric ?? config('throttleable.expiry_metric');
         $this->expiryTimeLimit = $expiryTimeLimit ?? config('throttleable.expiry_timelimit');
     }
-
 }
